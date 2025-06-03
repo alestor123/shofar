@@ -50,7 +50,7 @@ async function getDisasterNews(limit = 10) {
     const articles = await scrapeGoogleNews({
       searchTerm: DISASTER_KEYWORDS.join(' OR '),
       prettyUrls: true,
-      timeframe: '1m',
+      timeframe: '24h',
       queryVars: {
         hl: 'en',
         gl: 'US',
@@ -80,9 +80,7 @@ async function getDisasterNews(limit = 10) {
         description: article.snippet,
         thumbnail,
         latitude: geo.latitude,
-        longitude: geo.longitude,
-        mapsLink: `https://www.google.com/maps?q=${geo.latitude},${geo.longitude}`
-
+        longitude: geo.longitude
       });
     }
 

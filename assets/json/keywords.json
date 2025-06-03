@@ -1,0 +1,11 @@
+{
+  "disasterKeywords": [
+    "disaster", "war", "conflict", "airstrike", "explosion", "missile",
+    "earthquake", "flood", "cyclone", "hurricane", "volcano",
+    "terror attack", "civil unrest", "genocide", "refugee crisis"
+  ],
+  "emergencyKeywords": [
+    "help", "sos", "emergency", "urgent", "rescue", "save",
+    "trapped", "evacuate", "alert"
+  ]
+}

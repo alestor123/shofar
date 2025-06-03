@@ -1,38 +1,9 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/v1/**/*.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/v1/health",
-      "dest": "/api/v1/health/index.js"
-    },
-    {
-      "src": "/api/v1/events",
-      "dest": "/api/v1/events/index.js"
-    },
-    {
-      "src": "/api/v1/news",
-      "dest": "/api/v1/news/index.js"
-    },
-    {
-      "src": "/api/v1/tweets",
-      "dest": "/api/v1/tweets/index.js"
-    },
-    {
-      "src": "/api/v1/_middleware",
-      "dest": "/api/v1/_middleware.js"
-    },
-    {
-      "src": "/api/v1/(.*)",
-      "status": 404,
-      "headers": {
-        "Content-Type": "application/json"
-      }
-    }
-  ]
+    "routes":[
+{
+  "src":"/api/v1/health",
+  "dest":"src/v1/api/health/index.js",
+  "methods":["GET"]
+}
+    ]
 }
