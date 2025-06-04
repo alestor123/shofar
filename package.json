@@ -4,12 +4,24 @@
   "description": "A lightweight serverless API for event intelligence powered by open-source data (Google News, Twitter/Nitter)",
   "main": "src/api/index.js",
   "scripts": {
+    "dev": "vercel dev",
     "start": "vercel dev",
     "build": "echo 'No build step required'"
   },
-  "keywords": ["osint", "api", "serverless", "vercel", "news", "twitter", "nitter"],
+  "keywords": [
+    "osint",
+    "api",
+    "serverless",
+    "vercel",
+    "news",
+    "twitter",
+    "nitter"
+  ],
   "author": "",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "axios": "^1.9.0",
+    "nitter-scraper-v2": "^1.0.8",
+    "zlib": "^1.0.5"
+  }
 }
