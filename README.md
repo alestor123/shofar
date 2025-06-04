@@ -16,7 +16,6 @@
 - 🌍 Scrapes Google News and Twitter (Nitter) for disaster and crisis signals
 - 🧾 Outputs clean, structured JSON for dashboards, alerting, and research
 - ⚡ Minimal infrastructure: Vercel Functions + in-memory caching
-- 🔒 No AI/ML dependencies
 - 🗂️ Simple dossier report endpoint (POC)
 
 ---
