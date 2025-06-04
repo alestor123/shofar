@@ -1,38 +1,45 @@
-# Shofar
+<!-- SHOFAR: Real-Time Event Intelligence API -->
 
-A lightweight, serverless API for real-time detection and summarization of global events (disasters, conflicts, emergencies) using scraped data from Google News and Twitter (via Nitter). Built for easy deployment on Vercel.
 
----
 
-## Features
+<h1 align="center">Shofar 📢</h1>
 
-- Scrapes Google News and Twitter (Nitter) for disaster and crisis signals
-- Outputs clean, structured JSON for dashboards, alerting, and research
-- Minimal infrastructure: Vercel Functions + in-memory caching
-- No AI/ML dependencies
+<p align="center">
+  <b>A lightweight, serverless API for real-time detection and summarization of global events (disasters, conflicts, emergencies) using scraped data from Google News and Twitter (via Nitter).</b><br>
+  <i>Built for easy deployment on Vercel.</i>
+</p>
 
 ---
 
-## Installation
+## ✨ Features
+
+- 🌍 Scrapes Google News and Twitter (Nitter) for disaster and crisis signals
+- 🧾 Outputs clean, structured JSON for dashboards, alerting, and research
+- ⚡ Minimal infrastructure: Vercel Functions + in-memory caching
+- 🔒 No AI/ML dependencies
+- 🗂️ Simple dossier report endpoint (POC)
+
+---
+
+## 🚀 Installation
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/yourusername/shofar.git
-$ cd shofar
+git clone https://github.com/yourusername/shofar.git
+cd shofar
 
 # Install dependencies
-$ npm install
+npm install
 ```
 
 ---
 
-## Usage
+## 🛠️ Usage
 
 ### Local Development
 
 ```bash
-# Start the local dev server
-$ vercel dev
+vercel dev
 ```
 
 ### Deploy to Vercel
@@ -43,20 +50,20 @@ $ vercel dev
 
 ---
 
-## API Endpoints
+## 📡 API Endpoints
 
 All endpoints return JSON.
 
-| Endpoint                | Description                       |
-|------------------------|-----------------------------------|
-| `/api/v1/health`       | Health check                      |
-| `/api/v1/news`         | Latest disaster news (Google News)|
-| `/api/v1/tweets`       | Latest disaster tweets (Nitter)   |
-| `/api/v1/dossier`      | Generate a simple event dossier report (POC) |
+| Endpoint                | Method | Description                                 |
+|------------------------|--------|---------------------------------------------|
+| `/api/v1/health`       | GET    | Health check                                |
+| `/api/v1/news`         | GET    | Latest disaster news (Google News)          |
+| `/api/v1/tweets`       | GET    | Latest disaster tweets (Nitter)             |
+| `/api/v1/dossier`      | POST   | Generate a simple event dossier report (POC)|
 
 ---
 
-## Example Response
+## 🧪 Example Response
 
 ```json
 [
@@ -73,29 +80,7 @@ All endpoints return JSON.
 
 ---
 
-## Project Structure
-
-- `api/v1/` — API endpoints (health, news, tweets)
-- `utils/v1/lib/` — Core logic, datasources, services, utils, config
-- `assets/json/keywords.json` — Disaster and emergency keywords
-
----
-
-## ⚖️ Legal & Disclaimer
-
-> **Proof of Concept Only!**
->
-> This project is for educational and research purposes only. Web scraping may be subject to legal and ethical restrictions depending on your jurisdiction and the terms of service of the data sources. Use responsibly and at your own risk. 🚨
-
----
-
-## License
-
-MIT
-
----
-
-## Dossier Report Endpoint 🗂️
+## 🗂️ Dossier Report Endpoint
 
 The `/api/v1/dossier` endpoint generates a simple, static event dossier report based on provided input. This feature is a proof of concept and does not use AI or LLMs. The report is generated using a template and basic data aggregation.
 
@@ -108,4 +93,36 @@ curl -X POST \
   http://localhost:3000/api/v1/dossier
 ```
 
-**Note:** The dossier report is dynamic and for demonstration only. 
+> 📝 The dossier report is static and for demonstration only. No AI or advanced analysis is performed.
+
+---
+
+## 📁 Project Structure
+
+```
+shofar/
+├── api/v1/           # API endpoints (health, news, tweets, dossier)
+├── assets/
+│   ├── json/         # Disaster and emergency keywords
+│   └── templates/    # EJS templates for reports
+├── utils/v1/lib/     # Core logic, datasources, services, utils, config
+│   ├── datasources/
+│   ├── services/
+│   ├── utils/
+│   └── config/
+└── ...
+```
+
+---
+
+## ⚖️ Legal & Disclaimer
+
+> **Proof of Concept Only!**
+>
+> This project is for educational and research purposes only. Web scraping may be subject to legal and ethical restrictions depending on your jurisdiction and the terms of service of the data sources. Use responsibly and at your own risk. 🚨
+
+---
+
+## 📄 License
+
+MIT
