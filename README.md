@@ -52,6 +52,7 @@ All endpoints return JSON.
 | `/api/v1/health`       | Health check                      |
 | `/api/v1/news`         | Latest disaster news (Google News)|
 | `/api/v1/tweets`       | Latest disaster tweets (Nitter)   |
+| `/api/v1/dossier`      | Generate a simple event dossier report (POC) |
 
 ---
 
@@ -91,3 +92,20 @@ All endpoints return JSON.
 ## License
 
 MIT
+
+---
+
+## Dossier Report Endpoint 🗂️
+
+The `/api/v1/dossier` endpoint generates a simple, static event dossier report based on provided input. This feature is a proof of concept and does not use AI or LLMs. The report is generated using a template and basic data aggregation.
+
+**Example usage:**
+
+```bash
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://example.com/event"}' \
+  http://localhost:3000/api/v1/dossier
+```
+
+**Note:** The dossier report is dynamic and for demonstration only. 

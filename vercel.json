@@ -24,8 +24,8 @@
       "dest": "/api/v1/tweets/index.js"
     },
     {
-      "src": "/api/v1/_middleware",
-      "dest": "/api/v1/_middleware.js"
+      "src": "/api/v1/dossier",
+      "dest": "/api/v1/dossier/dossier.js"
     },
     {
       "src": "/api/v1/(.*)",
