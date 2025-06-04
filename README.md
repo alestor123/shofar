@@ -80,6 +80,14 @@ All endpoints return JSON.
 
 ---
 
+## ⚖️ Legal & Disclaimer
+
+> **Proof of Concept Only!**
+>
+> This project is for educational and research purposes only. Web scraping may be subject to legal and ethical restrictions depending on your jurisdiction and the terms of service of the data sources. Use responsibly and at your own risk. 🚨
+
+---
+
 ## License
 
 MIT
