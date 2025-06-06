@@ -5,7 +5,6 @@ const { execSync } = require('child_process');
 
 const BASE_URL = 'https://nitter.net';
 const TWITTER_BASE_URL = 'https://twitter.com';
-const MAX_PAGES = 20;
 
 const keywordsFile = path.resolve(process.cwd(), 'assets/json/keywords.json');
 const { disasterKeywords, emergencyKeywords } = JSON.parse(fs.readFileSync(keywordsFile, 'utf-8'));
@@ -46,7 +45,7 @@ function extractHashtags(text) {
   while ((match = regex.exec(text)) !== null) tags.push(match[1].toLowerCase());
   return tags;
 }
-async function scrapeNitterTweets() {
+async function scrapeNitterTweets(limit = 20 ,MAX_PAGES = 20) {
   let allTweets = [];
   let cursor = null;
 
@@ -54,8 +53,11 @@ async function scrapeNitterTweets() {
     const url = buildSearchUrl(cursor);
     const html = runCurl(url);
     const $ = cheerio.load(html);
-
+    var count = 0;
     $('.timeline-item').each((_, el) => {
+      if(count > limit) return false; // Stop if we reach the limit
+      count++;
+      // Skip retweets
       const tweetEl = $(el);
       const content = tweetEl.find('.tweet-content').text().trim();
 

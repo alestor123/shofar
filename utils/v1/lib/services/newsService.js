@@ -3,12 +3,11 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const NodeGeocoder = require('node-geocoder');
 const compromise = require('compromise');
+const fs = require('fs');
+const path = require('path');
 
-const DISASTER_KEYWORDS = [
-  'disaster', 'war', 'conflict', 'airstrike', 'explosion', 'missile',
-  'earthquake', 'flood', 'cyclone', 'hurricane', 'volcano',
-  'terror attack', 'civil unrest', 'genocide', 'refugee crisis'
-];
+const keywordsFile = path.resolve(process.cwd(), 'assets/json/keywords.json');
+const DISASTER_KEYWORDS = JSON.parse(fs.readFileSync(keywordsFile, 'utf-8')).disasterKeywords;
 
 // Geocoder setup (You can switch to OpenCage or Nominatim if needed)
 const geocoder = NodeGeocoder({

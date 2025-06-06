@@ -2,11 +2,19 @@ const { scrapeNitterTweets } = require('../../../utils/v1/lib/services/tweetServ
 
 module.exports = async (req, res) => {
   try {
-    // Optional: parse query param to limit number of tweets, default 20
-    const limit = parseInt(req.query.limit) || 20;
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization"
+  );
 
+    // Optional: parse query param to limit number of tweets, default 20
+    const articlelimit = parseInt(req.query.alimit) || 20;
+    const pagelimit = parseInt(req.query.plimit) || 20;
     // Fetch tweets using your scraper
-    const tweets = await scrapeNitterTweets(limit);
+    const tweets = await scrapeNitterTweets(articlelimit, pagelimit);
 
     // Return JSON response
     res.status(200).json({
