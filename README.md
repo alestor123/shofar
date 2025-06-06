@@ -183,7 +183,7 @@ curl -X POST \
 **Description:** Aggregates and enriches global event intelligence from major news sources using NewsAPI, disaster/emergency keywords, and geocoding. Returns only events with both a detected type and geolocation.
 
 **How it works:**
-- Fetches news articles from major sources (e.g., BBC, CNN, Reuters, etc.) using NewsAPI.
+- Fetches news articles from major sources (e.g., BBC, CNN, Reuters, Al Jazeera, CNBC, Fox News, MSNBC, The New York Times, The Washington Post) using NewsAPI.
 - Filters articles by disaster/emergency keywords (see `assets/json/keywords.json`).
 - Uses basic text matching to determine event type.
 - Attempts to extract geolocation (latitude/longitude) from article text using place names and geocoding.
@@ -214,6 +214,7 @@ curl http://localhost:3000/api/v1/main
 ```
 
 **Notes:**
+- News sources include: Al Jazeera, BBC News, CNBC, CNN, Fox News, MSNBC, Reuters, The New York Times, The Washington Post.
 - Requires a valid NewsAPI key and OpenCage geocoding key in your `.env` file.
 - Only articles with both a recognized event type and geolocation are returned.
 - See `utils/v1/lib/services/eventService.js` for implementation details.
@@ -283,3 +284,22 @@ shofar/
 ## 📄 License
 
 MIT
+
+---
+
+## 🙏 Credits & Acknowledgements
+
+- [Google News](https://news.google.com/) — News data source
+- [Nitter](https://nitter.net/) — Twitter alternative frontend for scraping tweets
+- [NewsAPI](https://newsapi.org/) — News aggregation API (for `/api/v1/main`)
+- [OpenCage Geocoding API](https://opencagedata.com/) — Geocoding service
+- [Al Jazeera](https://aljazeera.com/)
+- [BBC News](https://bbc.com/news)
+- [CNBC](https://cnbc.com/)
+- [CNN](https://cnn.com/)
+- [Fox News](https://foxnews.com/)
+- [MSNBC](https://msnbc.com/)
+- [Reuters](https://reuters.com/)
+- [The New York Times](https://nytimes.com/)
+- [The Washington Post](https://washingtonpost.com/)
+- All open-source contributors and the OSINT community 🌐
