@@ -142,7 +142,7 @@ curl http://localhost:3000/api/v1/tweets
 
 ### `/api/v1/dossier`  
 **Method:** `POST`  
-**Description:** Generates a simple, static event dossier report based on provided input (such as a URL or event description). This is a proof-of-concept feature and does not use AI or LLMs.
+**Description:** Generates a simple, static event dossier report based on provided input (such as a URL or event description). This is a proof-of-concept feature.
 
 **Request Body:**
 ```json
@@ -240,7 +240,7 @@ curl http://localhost:3000/api/v1/main
 
 ## 🗂️ Dossier Report Endpoint
 
-The `/api/v1/dossier` endpoint generates a simple, static event dossier report based on provided input. This feature is a proof of concept and does not use AI or LLMs. The report is generated using a template and basic data aggregation.
+The `/api/v1/dossier` endpoint generates a simple, static event dossier report based on provided input. This feature is a proof of concept.
 
 **Example usage:**
 
@@ -302,4 +302,5 @@ MIT
 - [Reuters](https://reuters.com/)
 - [The New York Times](https://nytimes.com/)
 - [The Washington Post](https://washingtonpost.com/)
+- [Groq AI](https://groq.com/) — LLM-powered dossier and analysis
 - All open-source contributors and the OSINT community 🌐
